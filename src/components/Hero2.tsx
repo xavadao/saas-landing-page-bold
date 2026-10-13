@@ -83,12 +83,12 @@ export default function Hero() {
       </div>
 
       {/* Split grid */}
-      <div style={{ position: 'relative', zIndex: 10, display: 'grid', gridTemplateColumns: '52% 48%', minHeight: '100vh' }}>
+      <div className="ax-hero-grid" style={{ position: 'relative', zIndex: 10, display: 'grid' }}>
 
         {/* LEFT — text anchored bottom-left */}
-        <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '140px 56px 72px 60px' }}>
+        <div className="ax-hero-copy" style={{ position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
           {/* Top status */}
-          <div style={{ position: 'absolute', top: 96, left: 60, display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div className="ax-hero-status" style={{ position: 'absolute', display: 'flex', alignItems: 'center', gap: 12 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '5px 12px', border: '1px solid var(--ax-border2)', background: 'rgba(255,255,255,0.02)' }}>
               <div style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--ax-aqua)', boxShadow: '0 0 8px var(--ax-aqua)', animation: 'pulseRed 2s ease-in-out infinite' }} />
               <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', color: 'var(--ax-aqua)', fontFamily: 'var(--font-display)', textTransform: 'uppercase' }}>System Online</span>
@@ -99,7 +99,7 @@ export default function Hero() {
           </div>
 
           {/* Vertical sidebar */}
-          <div style={{ position: 'absolute', left: 20, top: '50%', transform: 'translateY(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
+          <div className="ax-hero-sidebar" style={{ position: 'absolute', left: 20, top: '50%', transform: 'translateY(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
             <div style={{ width: 1, height: 60, background: 'var(--ax-border)' }} />
             <span className="ax-vert-label">Axiom Platform</span>
             <div style={{ width: 1, height: 60, background: 'var(--ax-border)' }} />
@@ -107,15 +107,15 @@ export default function Hero() {
 
           {/* Massive headline — glitch-reveal animation per word */}
           <h1 className="ax-font-display" style={{ fontSize: 'clamp(32px, 8vw, 120px)', fontWeight: 800, lineHeight: 0.88, letterSpacing: '-0.04em', color: 'var(--ax-white)', margin: 0 }}>
-            <div className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.05s' }}>BUILD</div>
-            <div className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.18s' }}>THE</div>
-            <div className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.31s' }}>SYSTEM</div>
-            <div className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.44s', color: 'var(--ax-white2)' }}>
+            <span className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.05s' }}>BUILD</span>
+            <span className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.18s' }}>THE</span>
+            <span className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.31s' }}>SYSTEM</span>
+            <span className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.44s', color: 'var(--ax-white2)' }}>
               THAT <span style={{ color: 'var(--ax-red)' }}>MOVES</span>
-            </div>
-            <div className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.57s' }}>
+            </span>
+            <span className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.57s' }}>
               BUSINESS<span style={{ color: 'var(--ax-red)' }}>.</span>
-            </div>
+            </span>
           </h1>
 
           {/* Red line */}
@@ -162,7 +162,7 @@ export default function Hero() {
         </div>
 
         {/* RIGHT — Cinematic SVG environment + floating cards */}
-        <div style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh' }}>
+        <div className="ax-hero-art" style={{ position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, #090909 0%, #0c0c0c 50%, #080808 100%)' }} />
 
           {/* SVG architectural world */}

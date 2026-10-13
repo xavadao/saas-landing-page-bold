@@ -794,3 +794,15 @@ h1, h2, h3, [id] { scroll-margin-top: 6rem; }
   .layout-wrap { row-gap: 1rem; }
   .ax-btn-primary, .ax-btn-ghost { max-width: 100%; white-space: normal; text-align: center; }
 }
+
+.ax-hero-grid { grid-template-columns: minmax(0, 52fr) minmax(0, 48fr); min-height: 100vh; }
+.ax-hero-copy { padding: 140px 56px 72px 60px; }
+.ax-hero-status { top: 96px; left: 60px; }
+.ax-hero-art { min-height: 100vh; }
+@media (max-width: 900px) {
+  .ax-hero-grid { grid-template-columns: minmax(0, 1fr); min-height: auto; }
+  .ax-hero-copy { padding: 160px 24px 56px; }
+  .ax-hero-status { top: 96px; left: 24px; right: 24px; flex-wrap: wrap; }
+  .ax-hero-sidebar { display: none !important; }
+  .ax-hero-art { min-height: 520px; }
+}
