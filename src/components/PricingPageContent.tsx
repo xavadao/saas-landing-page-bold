@@ -322,42 +322,47 @@ export default function PricingPageContent() {
             </h2>
           </div>
 
-          <div className="layout-four-weighted" style={{ display: 'grid',  gap: 1, background: '#111' }}>
-            {/* Header */}
-            <div style={{ background: '#080808', padding: '20px 24px' }}>
-              <span className="ax-micro-label" style={{ color: '#444' }}>FEATURE</span>
-            </div>
-            {['LAUNCH', 'COMMAND', 'SCALE'].map(n => (
-              <div key={n} style={{ background: n === 'COMMAND' ? '#0d0d0d' : '#080808', padding: '20px 24px', textAlign: 'center', borderTop: n === 'COMMAND' ? '2px solid var(--ax-red)' : '2px solid transparent' }}>
-                <span className="ax-micro-label" style={{ color: n === 'COMMAND' ? 'var(--ax-red)' : '#555' }}>{n}</span>
-              </div>
-            ))}
-
-            {/* Rows */}
-            {[
-              ['Automation workflows', '10 workflows', 'Unlimited', 'Unlimited + AI'],
-              ['Team members', 'Up to 10', 'Up to 100', 'Unlimited'],
-              ['CRM integrations', '1 connection', '40+ connections', '40+ + custom'],
-              ['AI forecasting', '—', '✓', '✓ + custom models'],
-              ['Data storage', '5 GB', '100 GB', 'Unlimited'],
-              ['SSO / SAML', '—', '✓', '✓'],
-              ['Audit logs', '30 days', '1 year', 'Unlimited + export'],
-              ['SLA guarantee', '99.5%', '99.9%', '99.99%'],
-              ['Support', 'Community', 'Priority (4hr)', 'Dedicated (1hr)'],
-            ].map(([feature, launch, command, scale], i) => (
-              <>
-                <div key={feature + 'f'} style={{ background: i % 2 === 0 ? '#080808' : '#070707', padding: '16px 24px', borderTop: '1px solid #111' }}>
-                  <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)' }}>{feature}</span>
-                </div>
-                {[launch, command, scale].map((val, j) => (
-                  <div key={feature + j} style={{ background: j === 1 ? (i % 2 === 0 ? '#0d0d0d' : '#0c0c0c') : (i % 2 === 0 ? '#080808' : '#070707'), padding: '16px 24px', textAlign: 'center', borderTop: '1px solid #111' }}>
-                    <span style={{ fontSize: 12, color: val === '—' ? '#333' : val === '✓' ? 'var(--ax-aqua)' : 'rgba(255,255,255,0.55)', fontFamily: 'monospace' }}>
-                      {val}
-                    </span>
-                  </div>
+          <div role="region" aria-label="Scrollable plan comparison" tabIndex={0} style={{ overflowX: 'auto', maxWidth: '100%' }}>
+            <table style={{ width: '100%', minWidth: 740, tableLayout: 'fixed', borderCollapse: 'separate', borderSpacing: 1, background: '#111' }}>
+              <caption className="sr-only">Illustrative features in the Launch, Command and Scale demo plans.</caption>
+              <colgroup><col style={{ width: '40%' }} /><col style={{ width: '20%' }} /><col style={{ width: '20%' }} /><col style={{ width: '20%' }} /></colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" style={{ background: '#080808', padding: '20px 24px', textAlign: 'left' }}>
+                    <span className="ax-micro-label" style={{ color: '#aaa' }}>FEATURE</span>
+                  </th>
+                  {['LAUNCH', 'COMMAND', 'SCALE'].map(n => (
+                    <th scope="col" key={n} style={{ background: n === 'COMMAND' ? '#0d0d0d' : '#080808', padding: '20px 24px', textAlign: 'center', borderTop: n === 'COMMAND' ? '2px solid var(--ax-red)' : '2px solid transparent' }}>
+                      <span className="ax-micro-label" style={{ color: n === 'COMMAND' ? '#ff6472' : '#aaa' }}>{n}</span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Automation workflows', '10 workflows', 'Unlimited', 'Unlimited + AI'],
+                  ['Team members', 'Up to 10', 'Up to 100', 'Unlimited'],
+                  ['CRM integrations', '1 connection', '40+ connections', '40+ + custom'],
+                  ['AI forecasting', '—', '✓', '✓ + custom models'],
+                  ['Data storage', '5 GB', '100 GB', 'Unlimited'],
+                  ['SSO / SAML', '—', '✓', '✓'],
+                  ['Audit logs', '30 days', '1 year', 'Unlimited + export'],
+                  ['SLA guarantee', '99.5%', '99.9%', '99.99%'],
+                  ['Support', 'Community', 'Priority (4hr)', 'Dedicated (1hr)'],
+                ].map(([feature, launch, command, scale], i) => (
+                  <tr key={feature}>
+                    <th scope="row" style={{ background: i % 2 === 0 ? '#080808' : '#070707', padding: '16px 24px', borderTop: '1px solid #111', textAlign: 'left', fontWeight: 400 }}>
+                      <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)' }}>{feature}</span>
+                    </th>
+                    {[launch, command, scale].map((val, j) => (
+                      <td key={j} style={{ background: j === 1 ? (i % 2 === 0 ? '#0d0d0d' : '#0c0c0c') : (i % 2 === 0 ? '#080808' : '#070707'), padding: '16px 24px', textAlign: 'center', borderTop: '1px solid #111' }}>
+                        <span style={{ fontSize: 12, color: val === '—' ? '#333' : val === '✓' ? 'var(--ax-aqua)' : 'rgba(255,255,255,0.55)', fontFamily: 'monospace' }}>{val}</span>
+                      </td>
+                    ))}
+                  </tr>
                 ))}
-              </>
-            ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

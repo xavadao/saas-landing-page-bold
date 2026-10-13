@@ -25,6 +25,10 @@ export default function Nav() {
 
   useEffect(() => {
     if (!mobileOpen) return;
+    const desktop = window.matchMedia('(min-width: 901px)');
+    if (desktop.matches) { setMobileOpen(false); return; }
+    const onDesktopChange = () => { if (desktop.matches) setMobileOpen(false); };
+    desktop.addEventListener('change', onDesktopChange);
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     const toggle = document.getElementById('axiom-menu-toggle');
@@ -43,7 +47,8 @@ export default function Nav() {
     return () => {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener('keydown', onKeyDown);
-      if (toggle?.isConnected) toggle.focus();
+      desktop.removeEventListener('change', onDesktopChange);
+      if (!desktop.matches && toggle?.isConnected && toggle.getClientRects().length) toggle.focus();
     };
   }, [mobileOpen]);
 
