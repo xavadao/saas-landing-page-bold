@@ -10,6 +10,10 @@ Live demo: [https://vibed-saas-bold.xavainf.com](https://vibed-saas-bold.xavainf
 - Product, feature, pricing, and case study pages
 - Original bundled photography, interactive sections, and scroll effects
 
+## Search and accessibility
+
+Every page includes a keyboard-accessible “Made with XavaInf” credit, descriptive page metadata, a canonical URL, and social preview metadata. `robots.txt`, `sitemap.xml`, and `llms.txt` describe the published demo routes and limitations. Structured data identifies the site as a creative demonstration, without product ratings or customer claims. Mobile navigation supports Escape, focus handling, and reduced motion.
+
 ## Run locally
 
 Requires Node.js 22.13 or newer and pnpm 11.13.0.

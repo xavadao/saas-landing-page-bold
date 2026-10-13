@@ -22,6 +22,31 @@ export default function Nav() {
 		return () => window.removeEventListener('scroll', handler);
 	}, []);
 
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const toggle = document.getElementById('axiom-menu-toggle');
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('#axiom-mobile-menu a')];
+    const focusable = [toggle, ...links].filter((element): element is HTMLElement => element instanceof HTMLElement);
+    links[0]?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileOpen(false);
+      if (event.key !== 'Tab' || !focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', onKeyDown);
+      if (toggle?.isConnected) toggle.focus();
+    };
+  }, [mobileOpen]);
+
 	return (
 		<nav
 			style={{
@@ -70,7 +95,7 @@ export default function Nav() {
 				</div>
 
 				{/* CTA */}
-				<div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+				<div className="ax-nav-actions" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
 					<Link href="/pricing" className="ax-btn-ghost" style={{ padding: '10px 24px', fontSize: 12, textDecoration: 'none' }}>
 						Sign In
 					</Link>
@@ -84,7 +109,11 @@ export default function Nav() {
 					className="nav-mobile-btn"
 					onClick={() => setMobileOpen(!mobileOpen)}
 					style={{ background: 'none', border: 'none', color: 'var(--ax-white)', cursor: 'pointer', padding: 8, display: 'none' }}
-					aria-label="Toggle menu"
+					id="axiom-menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="axiom-mobile-menu"
+          type="button"
 				>
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
 						{mobileOpen ? (
@@ -104,7 +133,7 @@ export default function Nav() {
 
 			{/* Mobile menu */}
 			{mobileOpen && (
-				<div style={{ background: 'rgba(8,8,8,0.98)', borderTop: '1px solid #252525', padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: 20 }}>
+				<div id="axiom-mobile-menu" className="ax-mobile-menu" style={{ background: 'rgba(8,8,8,0.98)', borderTop: '1px solid #252525', padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: 20 }}>
 					{NAV_LINKS.map(({ label, href }) => (
 						<Link
 							key={href}
@@ -131,7 +160,7 @@ export default function Nav() {
 
 			<style>{`
 				@media (max-width: 900px) {
-					.nav-links { display: none !important; }
+					.nav-links, .ax-nav-actions { display: none !important; }
 					.nav-mobile-btn { display: flex !important; }
 				}
 			`}</style>

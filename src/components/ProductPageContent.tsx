@@ -271,11 +271,11 @@ export default function ProductPageContent() {
               <span className="ax-micro-label" style={{ color: 'var(--ax-red)', letterSpacing: '0.2em' }}>THE PLATFORM</span>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'flex-end' }}>
+            <div className="layout-two" style={{ display: 'grid',  gap: 80, alignItems: 'flex-end' }}>
               {/* Left: Headline */}
               <div>
                 <h1 className="ax-font-display" style={{
-                  fontSize: 'clamp(64px, 9vw, 130px)',
+                  fontSize: 'clamp(32px, 9vw, 130px)',
                   fontWeight: 900,
                   lineHeight: 0.9,
                   letterSpacing: '-0.03em',
@@ -296,7 +296,7 @@ export default function ProductPageContent() {
                 <p style={{ fontSize: 18, lineHeight: 1.7, color: 'rgba(255,255,255,0.55)', maxWidth: 400, marginBottom: 48 }}>
                   Six interconnected platform layers. One unified experience. Built for teams that operate at a level most companies aspire to.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 24, marginBottom: 48 }}>
+                <div className="layout-three" style={{ display: 'grid',  gap: 24, marginBottom: 48 }}>
                   {[['40K+', 'Teams'], ['99.99%', 'Uptime'], ['200+', 'Integrations']].map(([v, l]) => (
                     <div key={l}>
                       <div className="ax-font-display" style={{ fontSize: 28, fontWeight: 800, color: 'var(--ax-white)', letterSpacing: '-0.02em' }}>{v}</div>
@@ -304,7 +304,7 @@ export default function ProductPageContent() {
                     </div>
                   ))}
                 </div>
-                <div style={{ display: 'flex', gap: 16 }}>
+                <div className="layout-wrap" style={{ display: 'flex', gap: 16 }}>
                   <Link href="/pricing" className="ax-btn-primary" style={{ textDecoration: 'none', padding: '14px 32px', fontSize: 13 }}>Start Building →</Link>
                   <Link href="/features" className="ax-btn-ghost" style={{ textDecoration: 'none', padding: '14px 32px', fontSize: 13 }}>Explore Features</Link>
                 </div>
@@ -320,17 +320,17 @@ export default function ProductPageContent() {
       {/* Platform Modules — Interactive */}
       <section style={{ background: '#0a0a0a', padding: '120px 0 0' }}>
         <div className="ax-container">
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 16 }}>
+          <div className="layout-wrap" style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 16 }}>
             <div style={{ width: 1, height: 48, background: 'var(--ax-aqua)' }} />
             <span className="ax-micro-label" style={{ color: 'var(--ax-aqua)', letterSpacing: '0.2em' }}>SIX LAYERS</span>
           </div>
-          <h2 className="ax-font-display" style={{ fontSize: 'clamp(40px, 6vw, 80px)', fontWeight: 900, letterSpacing: '-0.03em', lineHeight: 0.9, marginBottom: 80, color: 'var(--ax-white)' }}>
+          <h2 className="ax-font-display" style={{ fontSize: 'clamp(32px, 6vw, 80px)', fontWeight: 900, letterSpacing: '-0.03em', lineHeight: 0.9, marginBottom: 80, color: 'var(--ax-white)' }}>
             PLATFORM<br />
             <span style={{ WebkitTextStroke: '1px rgba(255,255,255,0.3)', color: 'transparent' }}>ARCHITECTURE.</span>
           </h2>
 
           {/* Module selector + detail */}
-          <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 2, minHeight: 600, border: '1px solid #1a1a1a' }}>
+          <div className="layout-modules" style={{ display: 'grid',  gap: 2, minHeight: 600, border: '1px solid #1a1a1a' }}>
             {/* Left: Module list */}
             <div style={{ borderRight: '1px solid #1a1a1a' }}>
               {modules.map((mod, i) => (
@@ -364,7 +364,7 @@ export default function ProductPageContent() {
             </div>
 
             {/* Right: Active module detail */}
-            <div style={{ padding: '60px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: '#0d0d0d' }}>
+            <div className="panel-padding-60-64" style={{  display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: '#0d0d0d' }}>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 32 }}>
                   <span className="ax-micro-label" style={{ color: active.color }}>{active.id}</span>
@@ -372,7 +372,7 @@ export default function ProductPageContent() {
                   <span className="ax-micro-label" style={{ color: '#444' }}>{active.sub}</span>
                 </div>
                 <h3 className="ax-font-display" style={{
-                  fontSize: 'clamp(48px, 6vw, 88px)',
+                  fontSize: 'clamp(32px, 6vw, 88px)',
                   fontWeight: 900,
                   lineHeight: 0.9,
                   letterSpacing: '-0.03em',
@@ -388,7 +388,7 @@ export default function ProductPageContent() {
               </div>
 
               <div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, marginBottom: 40 }}>
+                <div className="layout-two" style={{ display: 'grid',  gap: 32, marginBottom: 40 }}>
                   {active.stats.map(s => (
                     <div key={s.l} style={{ borderTop: `1px solid ${active.color}`, paddingTop: 16 }}>
                       <div className="ax-font-display" style={{ fontSize: 40, fontWeight: 900, color: active.color, letterSpacing: '-0.03em' }}>{s.v}</div>
@@ -409,10 +409,10 @@ export default function ProductPageContent() {
       <section style={{ padding: '140px 0', position: 'relative', overflow: 'hidden', background: '#080808' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(220,38,38,0.06) 0%, transparent 70%)' }} />
         <div className="ax-container" style={{ position: 'relative' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 80, alignItems: 'center' }}>
+          <div className="layout-side-main" style={{ display: 'grid',  gap: 80, alignItems: 'center' }}>
             <div>
               <div style={{ fontSize: 11, color: 'var(--ax-aqua)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 24 }}>WHY IT MATTERS</div>
-              <h2 className="ax-font-display" style={{ fontSize: 'clamp(36px, 4vw, 60px)', fontWeight: 900, lineHeight: 0.92, letterSpacing: '-0.03em', color: 'var(--ax-white)', marginBottom: 24 }}>
+              <h2 className="ax-font-display" style={{ fontSize: 'clamp(32px, 4vw, 60px)', fontWeight: 900, lineHeight: 0.92, letterSpacing: '-0.03em', color: 'var(--ax-white)', marginBottom: 24 }}>
                 ONE<br />PLATFORM.<br />
                 <span style={{ color: 'var(--ax-red)' }}>ZERO</span><br />SILOS.
               </h2>
@@ -421,7 +421,7 @@ export default function ProductPageContent() {
                 The average enterprise runs 137 SaaS tools. AXIOM replaces 6 of the most expensive and replaces them with one coherent system.
               </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 1, background: '#1a1a1a' }}>
+            <div className="layout-three" style={{ display: 'grid',  gap: 1, background: '#1a1a1a' }}>
               {[
                 { tool: 'Salesforce', replace: 'CRM & Pipeline', save: '$48K/yr' },
                 { tool: 'Monday.com', replace: 'Project Tracking', save: '$18K/yr' },
@@ -446,11 +446,11 @@ export default function ProductPageContent() {
       <section style={{ padding: '140px 0', background: '#050505', borderTop: '1px solid #111' }}>
         <div className="ax-container" style={{ textAlign: 'center' }}>
           <div className="ax-micro-label" style={{ color: 'var(--ax-red)', letterSpacing: '0.2em', marginBottom: 24 }}>READY TO BUILD</div>
-          <h2 className="ax-font-display" style={{ fontSize: 'clamp(48px, 7vw, 100px)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.03em', color: 'var(--ax-white)', marginBottom: 48 }}>
+          <h2 className="ax-font-display" style={{ fontSize: 'clamp(32px, 7vw, 100px)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.03em', color: 'var(--ax-white)', marginBottom: 48 }}>
             SEE IT IN<br />
             <span style={{ WebkitTextStroke: '2px var(--ax-white)', color: 'transparent' }}>ACTION.</span>
           </h2>
-          <div style={{ display: 'flex', gap: 16, justifyContent: 'center' }}>
+          <div className="layout-wrap" style={{ display: 'flex', gap: 16, justifyContent: 'center' }}>
             <Link href="/pricing" className="ax-btn-primary" style={{ textDecoration: 'none', padding: '18px 48px', fontSize: 14 }}>Start Free Trial →</Link>
             <Link href="/case-studies" className="ax-btn-ghost" style={{ textDecoration: 'none', padding: '18px 48px', fontSize: 14 }}>Read Case Studies</Link>
           </div>

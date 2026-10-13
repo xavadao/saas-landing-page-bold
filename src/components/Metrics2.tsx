@@ -143,19 +143,19 @@ export default function Metrics() {
       </div>
 
       {/* LAYER 4: Stats floating in scene space — NO BOXES */}
-      <div style={{ position: 'relative', zIndex: 10, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', padding: '40px 60px 60px' }}>
+      <div className="layout-four" style={{ position: 'relative', zIndex: 10, display: 'grid',  padding: '40px 60px 60px' }}>
         {[
           { val: 4200, sfx: '+', label: 'Teams Worldwide', note: 'Active orgs on platform', color: '#E8192C', x: '12%', y: '38%' },
           { val: 99.98, sfx: '%', label: 'Uptime SLA', note: 'Zero-downtime deployments', color: '#00D4C8', x: '36%', y: '52%' },
           { val: 2.1, pfx: '$', sfx: 'M', label: 'Avg Rev / Team', note: 'Revenue unlocked annually', color: '#E8192C', x: '60%', y: '44%' },
           { val: 18, sfx: 'ms', label: 'Response Latency', note: 'Median across all endpoints', color: '#00D4C8', x: '82%', y: '36%' },
         ].map((m, i) => (
-          <div key={i} style={{ padding: '40px 32px', position: 'relative' }}>
+          <div key={i} className="panel-padding-40-32" style={{  position: 'relative' }}>
             {/* Accent line — no box */}
             <div style={{ height: 2, width: 28, background: m.color, marginBottom: 16, boxShadow: `0 0 12px ${m.color}` }} />
             {/* Giant floating number */}
             <div style={{
-              fontSize: 'clamp(52px, 5.5vw, 88px)',
+              fontSize: 'clamp(32px, 5.5vw, 88px)',
               fontWeight: 800,
               color: m.color,
               fontFamily: 'var(--font-display)',
@@ -177,13 +177,13 @@ export default function Metrics() {
       </div>
 
       {/* Bottom strip — stats embedded in scene */}
-      <div style={{ position: 'relative', zIndex: 10, borderTop: '1px solid rgba(255,255,255,0.05)', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
+      <div className="layout-three" style={{ position: 'relative', zIndex: 10, borderTop: '1px solid rgba(255,255,255,0.05)', display: 'grid',  }}>
         {[
           { val: '12B+', label: 'Events / month', color: 'var(--ax-red)' },
           { val: '340ms', label: 'Signal-to-action', color: 'var(--ax-aqua)' },
           { val: '98%', label: 'Team adoption rate', color: 'var(--ax-red)' },
         ].map((s, i) => (
-          <div key={i} style={{ padding: '20px 60px', borderRight: i < 2 ? '1px solid rgba(255,255,255,0.05)' : 'none', display: 'flex', alignItems: 'center', gap: 20 }}>
+          <div key={i} className="panel-padding-20-60 layout-wrap" style={{  borderRight: i < 2 ? '1px solid rgba(255,255,255,0.05)' : 'none', display: 'flex', alignItems: 'center', gap: 20 }}>
             <div style={{ fontSize: 26, fontWeight: 800, color: s.color, fontFamily: 'var(--font-display)', lineHeight: 1, letterSpacing: '-0.03em' }}>{s.val}</div>
             <div style={{ width: 1, height: 24, background: 'var(--ax-border2)' }} />
             <div style={{ fontSize: 10, color: 'var(--ax-muted)', letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: 'var(--font-display)' }}>{s.label}</div>

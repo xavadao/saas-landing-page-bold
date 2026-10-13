@@ -78,7 +78,7 @@ export default function FinalCTA() {
       <div style={{ position: 'absolute', bottom: 40, right: 40, width: 60, height: 60, borderBottom: '1px solid rgba(0,212,200,0.4)', borderRight: '1px solid rgba(0,212,200,0.4)', zIndex: 5 }} />
 
       {/* Section marker */}
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, borderBottom: '1px solid var(--ax-border)', padding: '20px 60px', display: 'flex', alignItems: 'center', gap: 20, zIndex: 10 }}>
+      <div className="panel-padding-20-60 layout-wrap" style={{ position: 'absolute', top: 0, left: 0, right: 0, borderBottom: '1px solid var(--ax-border)',  display: 'flex', alignItems: 'center', gap: 20, zIndex: 10 }}>
         <span className="ax-micro-label" style={{ color: 'var(--ax-red)' }}>§ 08</span>
         <div style={{ width: 1, height: 16, background: 'var(--ax-border2)' }} />
         <span className="ax-micro-label">START NOW</span>
@@ -93,7 +93,7 @@ export default function FinalCTA() {
       </div>
 
       {/* Main content — bottom-left anchored */}
-      <div style={{ position: 'relative', zIndex: 10, padding: '160px 60px 100px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+      <div className="panel-padding-160-60-100" style={{ position: 'relative', zIndex: 10,  display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
 
         {/* Pre-line */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 32 }}>
@@ -103,7 +103,7 @@ export default function FinalCTA() {
 
         {/* Massive headline */}
         <h2 className="ax-font-display" style={{
-          fontSize: 'clamp(64px, 12vw, 180px)',
+          fontSize: 'clamp(32px, 12vw, 180px)',
           fontWeight: 800,
           lineHeight: 0.85,
           letterSpacing: '-0.05em',
@@ -135,7 +135,7 @@ export default function FinalCTA() {
 
         {/* CTA group */}
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 56, opacity: vis ? 1 : 0, transition: 'opacity 0.8s ease 0.5s' }}>
-          <a href="#pricing" className="ax-btn-primary" style={{ fontSize: 15, padding: '16px 40px' }}>
+          <a href="/pricing" className="ax-btn-primary" style={{ fontSize: 15, padding: '16px 40px' }}>
             Start Building Free →
           </a>
           <a href="#features" className="ax-btn-ghost" style={{ fontSize: 15, padding: '16px 40px' }}>

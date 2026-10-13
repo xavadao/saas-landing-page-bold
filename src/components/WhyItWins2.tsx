@@ -35,7 +35,7 @@ export default function WhyItWins() {
       style={{ background: 'var(--ax-black2)', position: 'relative', overflow: 'hidden' }}
     >
       {/* Section marker */}
-      <div style={{ borderBottom: '1px solid var(--ax-border)', padding: '20px 60px', display: 'flex', alignItems: 'center', gap: 20, position: 'relative', zIndex: 5 }}>
+      <div className="panel-padding-20-60 layout-wrap" style={{ borderBottom: '1px solid var(--ax-border)',  display: 'flex', alignItems: 'center', gap: 20, position: 'relative', zIndex: 5 }}>
         <span className="ax-micro-label" style={{ color: 'var(--ax-aqua)' }}>§ 03</span>
         <div style={{ width: 1, height: 16, background: 'var(--ax-border2)' }} />
         <span className="ax-micro-label">WHY IT WINS</span>
@@ -43,8 +43,8 @@ export default function WhyItWins() {
       </div>
 
       {/* Big headline — full bleed */}
-      <div style={{
-        padding: '80px 60px 0',
+      <div className="panel-padding-80-60-0" style={{
+
         position: 'relative',
         zIndex: 5,
         opacity: visible ? 1 : 0,
@@ -52,7 +52,7 @@ export default function WhyItWins() {
         transition: 'opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1)',
       }}>
         <h2 className="ax-font-display" style={{
-          fontSize: 'clamp(52px, 8vw, 128px)',
+          fontSize: 'clamp(32px, 8vw, 128px)',
           fontWeight: 800,
           lineHeight: 0.88,
           letterSpacing: '-0.04em',
@@ -66,21 +66,21 @@ export default function WhyItWins() {
       </div>
 
       {/* Main grid — stats left, features right */}
-      <div style={{
+      <div className="layout-two panel-padding-60" style={{
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        padding: '60px',
+
+
         gap: 60,
         position: 'relative',
         zIndex: 5,
       }}>
         {/* STATS — 2x2 grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, border: '1px solid var(--ax-border)', alignSelf: 'start' }}>
+        <div className="layout-two" style={{ display: 'grid',  gap: 1, border: '1px solid var(--ax-border)', alignSelf: 'start' }}>
           {STATS.map((s, i) => (
             <div
               key={i}
-              style={{
-                padding: '36px 28px',
+              className="panel-padding-36-28" style={{
+
                 borderRight: i % 2 === 0 ? '1px solid var(--ax-border)' : 'none',
                 borderBottom: i < 2 ? '1px solid var(--ax-border)' : 'none',
                 background: 'var(--ax-black)',
@@ -95,7 +95,7 @@ export default function WhyItWins() {
             >
               {/* Accent bar */}
               <div style={{ height: 2, width: 28, background: s.color, marginBottom: 16 }} />
-              <div style={{ fontSize: 'clamp(36px, 4vw, 60px)', fontWeight: 800, color: s.color, fontFamily: 'var(--font-display)', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: 8 }}>{s.val}</div>
+              <div style={{ fontSize: 'clamp(32px, 4vw, 60px)', fontWeight: 800, color: s.color, fontFamily: 'var(--font-display)', lineHeight: 1, letterSpacing: '-0.04em', marginBottom: 8 }}>{s.val}</div>
               <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--ax-white)', fontFamily: 'var(--font-display)', marginBottom: 4, letterSpacing: '0.02em' }}>{s.label}</div>
               <div style={{ fontSize: 11, color: 'var(--ax-muted)' }}>{s.desc}</div>
               {/* Ghost bg number */}
@@ -154,7 +154,7 @@ export default function WhyItWins() {
 
       {/* Full-bleed bottom marquee text */}
       <div style={{ borderTop: '1px solid var(--ax-border)', overflow: 'hidden', padding: '24px 0', position: 'relative' }}>
-        <div style={{ display: 'flex', gap: 80, animation: 'marquee 20s linear infinite', width: 'max-content' }}>
+        <div className="layout-wrap" style={{ display: 'flex', gap: 80, animation: 'marquee 20s linear infinite', width: 'max-content' }}>
           {Array.from({ length: 8 }).map((_, i) => (
             <span key={i} className="ax-font-display" style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--ax-border2)', whiteSpace: 'nowrap' }}>
               AXIOM — THE OPERATING SYSTEM FOR GROWTH — BUILD · SHIP · SCALE · REPEAT

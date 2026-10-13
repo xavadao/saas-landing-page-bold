@@ -124,7 +124,7 @@ export default function PricingPageContent() {
 
         {/* Top bar — plan count */}
         <div style={{ position: 'absolute', top: 100, right: 0, left: 0 }}>
-          <div className="ax-container" style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <div className="ax-container layout-wrap" style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <div style={{ textAlign: 'right' }}>
               <div className="ax-font-display" style={{ fontSize: 96, fontWeight: 900, color: 'rgba(255,255,255,0.03)', letterSpacing: '-0.05em', lineHeight: 1 }}>03</div>
               <div className="ax-micro-label" style={{ color: '#222' }}>PLANS</div>
@@ -139,7 +139,7 @@ export default function PricingPageContent() {
           <div className="ax-container">
             <div className="ax-micro-label" style={{ color: 'var(--ax-aqua)', letterSpacing: '0.25em', marginBottom: 40 }}>TRANSPARENT PRICING</div>
             <h1 className="ax-font-display" style={{
-              fontSize: 'clamp(64px, 10vw, 148px)',
+              fontSize: 'clamp(32px, 10vw, 148px)',
               fontWeight: 900,
               lineHeight: 0.86,
               letterSpacing: '-0.04em',
@@ -151,7 +151,7 @@ export default function PricingPageContent() {
               <span style={{ WebkitTextStroke: '3px rgba(255,255,255,0.2)', color: 'transparent' }}>SCALE.</span>
             </h1>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: 48 }}>
+            <div className="layout-wrap" style={{ display: 'flex', alignItems: 'center', gap: 48 }}>
               <p style={{ fontSize: 17, lineHeight: 1.7, color: 'rgba(255,255,255,0.4)', maxWidth: 400, margin: 0 }}>
                 No hidden fees. No surprise overage bills. One price that scales with your team — and always includes everything.
               </p>
@@ -201,13 +201,13 @@ export default function PricingPageContent() {
       {/* Pricing cards */}
       <section style={{ padding: '80px 0 120px', background: '#080808' }}>
         <div className="ax-container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 1, background: '#1a1a1a' }}>
+          <div className="layout-three" style={{ display: 'grid',  gap: 1, background: '#1a1a1a' }}>
             {PLANS.map((plan) => (
               <div
                 key={plan.id}
-                style={{
+                className="panel-padding-48-40" style={{
                   background: plan.featured ? '#0d0d0d' : '#090909',
-                  padding: '48px 40px',
+
                   position: 'relative',
                   borderTop: plan.featured ? `3px solid ${plan.accent}` : '3px solid transparent',
                   display: 'flex',
@@ -299,7 +299,7 @@ export default function PricingPageContent() {
           </div>
 
           {/* Enterprise strip */}
-          <div style={{ background: '#0a0a0a', border: '1px solid #151515', borderTop: 'none', padding: '40px 48px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div className="panel-padding-40-48 layout-wrap" style={{ background: '#0a0a0a', border: '1px solid #151515', borderTop: 'none',  display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div>
               <div className="ax-font-display" style={{ fontSize: 20, fontWeight: 800, color: 'var(--ax-white)', letterSpacing: '-0.02em', marginBottom: 4 }}>ENTERPRISE CUSTOM</div>
               <div style={{ fontSize: 13, color: '#555' }}>500+ seats · Custom SLAs · Private cloud · Dedicated success team</div>
@@ -314,7 +314,7 @@ export default function PricingPageContent() {
       {/* Comparison table */}
       <section style={{ padding: '120px 0', background: '#060606', borderTop: '1px solid #0f0f0f' }}>
         <div className="ax-container">
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 80 }}>
+          <div className="layout-wrap" style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 80 }}>
             <div style={{ width: 1, height: 48, background: 'var(--ax-red)' }} />
             <h2 className="ax-font-display" style={{ fontSize: 'clamp(32px, 4vw, 56px)', fontWeight: 900, letterSpacing: '-0.03em', color: 'var(--ax-white)', margin: 0 }}>
               WHAT'S INCLUDED<br />
@@ -322,7 +322,7 @@ export default function PricingPageContent() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 1, background: '#111' }}>
+          <div className="layout-four-weighted" style={{ display: 'grid',  gap: 1, background: '#111' }}>
             {/* Header */}
             <div style={{ background: '#080808', padding: '20px 24px' }}>
               <span className="ax-micro-label" style={{ color: '#444' }}>FEATURE</span>
@@ -365,10 +365,10 @@ export default function PricingPageContent() {
       {/* FAQ */}
       <section style={{ padding: '120px 0', background: '#070707' }}>
         <div className="ax-container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 80 }}>
+          <div className="layout-side-main" style={{ display: 'grid',  gap: 80 }}>
             <div>
               <div className="ax-micro-label" style={{ color: 'var(--ax-aqua)', letterSpacing: '0.2em', marginBottom: 24 }}>FAQ</div>
-              <h2 className="ax-font-display" style={{ fontSize: 'clamp(36px, 4vw, 64px)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.03em', color: 'var(--ax-white)', marginBottom: 32 }}>
+              <h2 className="ax-font-display" style={{ fontSize: 'clamp(32px, 4vw, 64px)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.03em', color: 'var(--ax-white)', marginBottom: 32 }}>
                 FAIR<br />QUESTIONS.
               </h2>
               <p style={{ fontSize: 14, lineHeight: 1.75, color: 'rgba(255,255,255,0.35)' }}>
@@ -396,7 +396,7 @@ export default function PricingPageContent() {
                     <span className="ax-font-display" style={{ fontSize: 16, fontWeight: 700, color: openFaq === i ? 'var(--ax-white)' : 'var(--ax-white2)', letterSpacing: '-0.01em', transition: 'color 0.2s' }}>
                       {faq.q}
                     </span>
-                    <div style={{ width: 20, height: 20, border: '1px solid #2a2a2a', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: openFaq === i ? 'var(--ax-red)' : '#555', fontSize: 14, transition: 'all 0.2s', transform: openFaq === i ? 'rotate(45deg)' : 'none' }}>
+                    <div className="layout-wrap" style={{ width: 20, height: 20, border: '1px solid #2a2a2a', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: openFaq === i ? 'var(--ax-red)' : '#555', fontSize: 14, transition: 'all 0.2s', transform: openFaq === i ? 'rotate(45deg)' : 'none' }}>
                       +
                     </div>
                   </button>
@@ -416,10 +416,10 @@ export default function PricingPageContent() {
       <section style={{ padding: '120px 0', background: '#050505', borderTop: '1px solid #0f0f0f', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 80% at 30% 50%, rgba(220,38,38,0.04) 0%, transparent 70%)' }} />
         <div className="ax-container" style={{ position: 'relative' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+          <div className="layout-two" style={{ display: 'grid',  gap: 80, alignItems: 'center' }}>
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 40, padding: '20px 28px', border: '1px solid #1a1a1a', background: '#0a0a0a' }}>
-                <div style={{ width: 40, height: 40, border: '1px solid var(--ax-aqua)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <div className="panel-padding-20-28 layout-wrap" style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 40,  border: '1px solid #1a1a1a', background: '#0a0a0a' }}>
+                <div className="layout-wrap" style={{ width: 40, height: 40, border: '1px solid var(--ax-aqua)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M3 8L6.5 11.5L13 4.5" stroke="var(--ax-aqua)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -430,7 +430,7 @@ export default function PricingPageContent() {
                 </div>
               </div>
 
-              <h2 className="ax-font-display" style={{ fontSize: 'clamp(48px, 6vw, 88px)', fontWeight: 900, lineHeight: 0.88, letterSpacing: '-0.04em', color: 'var(--ax-white)', margin: 0 }}>
+              <h2 className="ax-font-display" style={{ fontSize: 'clamp(32px, 6vw, 88px)', fontWeight: 900, lineHeight: 0.88, letterSpacing: '-0.04em', color: 'var(--ax-white)', margin: 0 }}>
                 NO RISK.<br />
                 <span style={{ color: 'var(--ax-red)' }}>ALL</span><br />
                 UPSIDE.
@@ -448,7 +448,7 @@ export default function PricingPageContent() {
                   See Customer Results First
                 </Link>
               </div>
-              <div style={{ display: 'flex', gap: 32, marginTop: 32 }}>
+              <div className="layout-wrap" style={{ display: 'flex', gap: 32, marginTop: 32 }}>
                 {['14-day free trial', 'No credit card', 'Cancel anytime'].map(t => (
                   <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                     <div style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--ax-aqua)' }} />

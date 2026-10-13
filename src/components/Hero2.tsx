@@ -106,7 +106,7 @@ export default function Hero() {
           </div>
 
           {/* Massive headline — glitch-reveal animation per word */}
-          <h1 className="ax-font-display" style={{ fontSize: 'clamp(64px, 8vw, 120px)', fontWeight: 800, lineHeight: 0.88, letterSpacing: '-0.04em', color: 'var(--ax-white)', margin: 0 }}>
+          <h1 className="ax-font-display" style={{ fontSize: 'clamp(32px, 8vw, 120px)', fontWeight: 800, lineHeight: 0.88, letterSpacing: '-0.04em', color: 'var(--ax-white)', margin: 0 }}>
             <div className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.05s' }}>BUILD</div>
             <div className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.18s' }}>THE</div>
             <div className="animate-glitch-reveal" style={{ opacity: 0, display: 'block', animationDelay: '0.31s' }}>SYSTEM</div>
@@ -130,7 +130,7 @@ export default function Hero() {
 
           {/* CTAs */}
           <div className="animate-fade-up" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', opacity: 0, animationDelay: '1.0s', marginBottom: 44 }}>
-            <a href="#pricing" className="ax-btn-primary">Start Building →</a>
+            <a href="/pricing" className="ax-btn-primary">Start Building →</a>
             <a href="#features" className="ax-btn-ghost">See Product ↓</a>
           </div>
 

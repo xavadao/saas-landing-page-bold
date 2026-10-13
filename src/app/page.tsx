@@ -10,14 +10,11 @@ import ProductTeaser from '@/components/ProductTeaser';
 import FinalCTA from '@/components/FinalCTA2';
 import Footer from '@/components/Footer2';
 
-export const metadata = {
-	title: 'AXIOM - Build the system that moves business.',
-	description: 'The command-center platform for high-growth teams. Run faster. Ship smarter. Scale cleanly.',
-};
+
 
 export default function HomePage() {
 	return (
-		<main style={{ background: 'var(--ax-black)', color: 'var(--ax-white)', overflowX: 'hidden' }}>
+		<main id="main-content" tabIndex={-1} style={{ background: 'var(--ax-black)', color: 'var(--ax-white)', overflowX: 'hidden' }}>
 			<Nav />
 			<Hero />
 			<LogoMarquee />

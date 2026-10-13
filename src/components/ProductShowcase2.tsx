@@ -64,8 +64,8 @@ export default function ProductShowcase() {
       <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '32px 32px', pointerEvents: 'none', opacity: 0.5 }} />
 
       {/* Full-bleed section label */}
-      <div style={{ borderBottom: '1px solid var(--ax-border)', padding: '20px 60px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative', zIndex: 5 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+      <div className="panel-padding-20-60" style={{ borderBottom: '1px solid var(--ax-border)',  display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative', zIndex: 5 }}>
+        <div className="layout-wrap" style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           <span className="ax-vert-label" style={{ transform: 'none', writingMode: 'horizontal-tb', fontSize: 9, letterSpacing: '0.24em' }}>PRODUCT CAPABILITIES</span>
           <div style={{ width: 1, height: 16, background: 'var(--ax-border2)' }} />
           <span className="ax-micro-label">§ 02 — WHAT WE DO</span>
@@ -108,8 +108,8 @@ export default function ProductShowcase() {
           )}
 
           {/* Text side */}
-          <div style={{
-            padding: '64px 60px',
+          <div className="panel-padding-64-60" style={{
+
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
@@ -139,7 +139,7 @@ export default function ProductShowcase() {
               <h2
                 className="ax-font-display"
                 style={{
-                  fontSize: 'clamp(52px, 6vw, 96px)',
+                  fontSize: 'clamp(32px, 6vw, 96px)',
                   fontWeight: 800,
                   lineHeight: 0.85,
                   letterSpacing: '-0.04em',
@@ -338,7 +338,7 @@ function PanelVisual({ panel, active }: { panel: typeof PANELS[0]; active: boole
       {/* Ghost large number */}
       <div style={{
         position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-        fontSize: 'clamp(120px, 18vw, 220px)',
+        fontSize: 'clamp(32px, 18vw, 220px)',
         fontWeight: 800,
         color: `${c}05`,
         fontFamily: 'var(--font-display)',

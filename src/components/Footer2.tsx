@@ -14,10 +14,10 @@ export default function Footer() {
       <div style={{ height: 1, background: 'linear-gradient(90deg, var(--ax-red), var(--ax-aqua) 50%, transparent)' }} />
 
       {/* Main footer grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr', gap: 0, borderBottom: '1px solid var(--ax-border)' }}>
+      <div className="layout-footer" style={{ display: 'grid',  gap: 0, borderBottom: '1px solid var(--ax-border)' }}>
 
         {/* Brand column */}
-        <div style={{ padding: '64px 60px', borderRight: '1px solid var(--ax-border)' }}>
+        <div className="panel-padding-64-60" style={{  borderRight: '1px solid var(--ax-border)' }}>
           {/* Logo */}
           <div className="ax-font-display" style={{ fontSize: 28, fontWeight: 800, letterSpacing: '-0.04em', marginBottom: 20 }}>
             AX<span style={{ color: 'var(--ax-red)' }}>I</span>OM
@@ -61,7 +61,7 @@ export default function Footer() {
 
         {/* Link columns */}
         {Object.entries(LINKS).map(([category, links]) => (
-          <div key={category} style={{ padding: '64px 36px', borderRight: category !== 'Legal' ? '1px solid var(--ax-border)' : 'none' }}>
+          <div key={category} className="panel-padding-64-36" style={{  borderRight: category !== 'Legal' ? '1px solid var(--ax-border)' : 'none' }}>
             <div style={{ fontSize: 9, fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--ax-muted)', fontFamily: 'var(--font-display)', marginBottom: 24 }}>
               {category}
             </div>
@@ -83,13 +83,13 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 60px', flexWrap: 'wrap', gap: 12 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+      <div className="panel-padding-20-60" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between',  flexWrap: 'wrap', gap: 12 }}>
+        <div className="layout-wrap" style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           <span className="ax-micro-label">© 2024 AXIOM SYSTEMS INC.</span>
           <div style={{ width: 1, height: 12, background: 'var(--ax-border2)' }} />
           <span className="ax-micro-label">ALL RIGHTS RESERVED</span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <div className="layout-wrap" style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           <span className="ax-micro-label">BUILD.247.PROD</span>
           <div style={{ width: 1, height: 12, background: 'var(--ax-border2)' }} />
           <span className="ax-micro-label" style={{ color: 'var(--ax-aqua)' }}>v2.4.1</span>

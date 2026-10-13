@@ -23,7 +23,7 @@ export default function ProductTeaser() {
       style={{ position: 'relative', overflow: 'hidden', background: '#050505' }}
     >
       {/* Section marker */}
-      <div style={{ borderBottom: '1px solid var(--ax-border)', padding: '20px 60px', display: 'flex', alignItems: 'center', gap: 20, position: 'relative', zIndex: 10 }}>
+      <div className="panel-padding-20-60 layout-wrap" style={{ borderBottom: '1px solid var(--ax-border)',  display: 'flex', alignItems: 'center', gap: 20, position: 'relative', zIndex: 10 }}>
         <span className="ax-micro-label" style={{ color: 'var(--ax-red)' }}>§ 07</span>
         <div style={{ width: 1, height: 16, background: 'var(--ax-border2)' }} />
         <span className="ax-micro-label">SYSTEM PREVIEW</span>
@@ -127,7 +127,7 @@ export default function ProductTeaser() {
         </svg>
 
         {/* Text content — left-anchored */}
-        <div style={{ position: 'relative', zIndex: 10, padding: '80px 60px 80px', maxWidth: 700, marginTop: 'auto', marginBottom: 'auto', alignSelf: 'flex-start', display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: 700 }}>
+        <div className="panel-padding-80-60-80" style={{ position: 'relative', zIndex: 10,  maxWidth: 700, marginTop: 'auto', marginBottom: 'auto', alignSelf: 'flex-start', display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: 700 }}>
 
           {/* Eyebrow */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 32 }}>
@@ -141,7 +141,7 @@ export default function ProductTeaser() {
           <h2
             className="ax-font-display"
             style={{
-              fontSize: 'clamp(52px, 7vw, 112px)',
+              fontSize: 'clamp(32px, 7vw, 112px)',
               fontWeight: 900,
               lineHeight: 0.88,
               letterSpacing: '-0.04em',

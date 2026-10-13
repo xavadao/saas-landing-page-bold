@@ -187,7 +187,7 @@ export default function CaseStudiesPageContent() {
           <div className="ax-container">
             <div className="ax-micro-label" style={{ color: 'var(--ax-red)', letterSpacing: '0.25em', marginBottom: 48 }}>CUSTOMER PROOF</div>
             <h1 className="ax-font-display" style={{
-              fontSize: 'clamp(72px, 12vw, 180px)',
+              fontSize: 'clamp(32px, 12vw, 180px)',
               fontWeight: 900,
               lineHeight: 0.85,
               letterSpacing: '-0.04em',
@@ -199,11 +199,11 @@ export default function CaseStudiesPageContent() {
               <span style={{ WebkitTextStroke: '3px rgba(255,255,255,0.2)', color: 'transparent' }}>COMPOUND.</span>
             </h1>
 
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginTop: 60 }}>
+            <div className="layout-wrap" style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginTop: 60 }}>
               <p style={{ fontSize: 18, lineHeight: 1.7, color: 'rgba(255,255,255,0.4)', maxWidth: 420 }}>
                 Four companies. Four different industries. The same outcome — operations transformed, numbers that don't lie.
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 40, textAlign: 'right' }}>
+              <div className="layout-three" style={{ display: 'grid',  gap: 40, textAlign: 'right' }}>
                 {[['$11M+', 'Customer savings'], ['4.2×', 'Avg ROI'], ['<90 days', 'Time to value']].map(([v, l]) => (
                   <div key={l}>
                     <div className="ax-font-display" style={{ fontSize: 32, fontWeight: 900, color: 'var(--ax-white)', letterSpacing: '-0.03em' }}>{v}</div>
@@ -220,7 +220,7 @@ export default function CaseStudiesPageContent() {
 
       {/* Logo strip */}
       <section style={{ padding: '48px 0', background: '#080808', borderBottom: '1px solid #111', overflow: 'hidden' }}>
-        <div style={{ display: 'flex', gap: 64, animation: 'marquee 20s linear infinite', whiteSpace: 'nowrap' }}>
+        <div className="layout-wrap" style={{ display: 'flex', gap: 64, animation: 'marquee 20s linear infinite', whiteSpace: 'nowrap' }}>
           {[...LOGOS, ...LOGOS].map((logo, i) => (
             <span key={i} className="ax-font-display" style={{ fontSize: 13, fontWeight: 800, color: '#2a2a2a', letterSpacing: '0.2em' }}>{logo}</span>
           ))}
@@ -236,7 +236,7 @@ export default function CaseStudiesPageContent() {
             position: 'absolute',
             top: '50%', right: i % 2 === 0 ? -20 : 'auto', left: i % 2 === 0 ? 'auto' : -20,
             transform: 'translateY(-50%)',
-            fontSize: 'clamp(200px, 25vw, 360px)',
+            fontSize: 'clamp(32px, 25vw, 360px)',
             fontWeight: 900,
             lineHeight: 1,
             color: 'rgba(255,255,255,0.018)',
@@ -249,13 +249,13 @@ export default function CaseStudiesPageContent() {
 
           <div className="ax-container" style={{ position: 'relative', padding: '120px 0' }}>
             {/* Header row */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 80 }}>
+            <div className="layout-wrap" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 80 }}>
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 16 }}>
+                <div className="layout-wrap" style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 16 }}>
                   <div style={{ width: 32, height: 2, background: study.accentColor }} />
                   <span className="ax-micro-label" style={{ color: study.accentColor }}>{study.id} · {study.industry}</span>
                 </div>
-                <h2 className="ax-font-display" style={{ fontSize: 'clamp(36px, 4vw, 64px)', fontWeight: 900, letterSpacing: '-0.03em', lineHeight: 0.9, color: 'var(--ax-white)', margin: 0 }}>
+                <h2 className="ax-font-display" style={{ fontSize: 'clamp(32px, 4vw, 64px)', fontWeight: 900, letterSpacing: '-0.03em', lineHeight: 0.9, color: 'var(--ax-white)', margin: 0 }}>
                   {study.company}
                 </h2>
               </div>
@@ -265,7 +265,7 @@ export default function CaseStudiesPageContent() {
             </div>
 
             {/* Body: 3-column */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 1, background: '#111', marginBottom: 1 }}>
+            <div className="layout-three" style={{ display: 'grid',  gap: 1, background: '#111', marginBottom: 1 }}>
               {/* Challenge */}
               <div style={{ background: '#080808', padding: '40px 36px' }}>
                 <div className="ax-micro-label" style={{ color: '#444', marginBottom: 20 }}>THE CHALLENGE</div>
@@ -281,13 +281,13 @@ export default function CaseStudiesPageContent() {
                 </p>
               </div>
               {/* Quote */}
-              <div style={{ background: '#0a0a0a', padding: '40px 36px', borderLeft: `3px solid ${study.accentColor}` }}>
+              <div className="panel-padding-40-36" style={{ background: '#0a0a0a',  borderLeft: `3px solid ${study.accentColor}` }}>
                 <div className="ax-micro-label" style={{ color: study.accentColor, marginBottom: 20 }}>IN THEIR WORDS</div>
                 <blockquote style={{ fontSize: 15, lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontStyle: 'italic', margin: '0 0 24px' }}>
                   "{study.quote}"
                 </blockquote>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <div style={{ width: 36, height: 36, borderRadius: '50%', background: study.accentColor + '30', border: `1px solid ${study.accentColor}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div className="layout-wrap" style={{ width: 36, height: 36, borderRadius: '50%', background: study.accentColor + '30', border: `1px solid ${study.accentColor}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <span className="ax-font-display" style={{ fontSize: 11, fontWeight: 800, color: study.accentColor }}>{study.initials}</span>
                   </div>
                   <div>
@@ -299,9 +299,9 @@ export default function CaseStudiesPageContent() {
             </div>
 
             {/* Stats row */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 1, background: '#111' }}>
+            <div className="layout-four" style={{ display: 'grid', gap: 1, background: '#111' }}>
               {study.stats.map((stat) => (
-                <div key={stat.label} style={{ background: '#080808', padding: '32px 28px', borderTop: `1px solid ${study.accentColor}30` }}>
+                <div key={stat.label} className="panel-padding-32-28" style={{ background: '#080808',  borderTop: `1px solid ${study.accentColor}30` }}>
                   <div className="ax-font-display" style={{ fontSize: 'clamp(28px, 3vw, 48px)', fontWeight: 900, color: study.accentColor, letterSpacing: '-0.03em', lineHeight: 1 }}>
                     {stat.value}
                   </div>
@@ -316,13 +316,13 @@ export default function CaseStudiesPageContent() {
       {/* Aggregate metrics */}
       <section style={{ padding: '120px 0', background: '#060606', borderTop: '1px solid #111', borderBottom: '1px solid #111' }}>
         <div className="ax-container">
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 80 }}>
+          <div className="layout-wrap" style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 80 }}>
             <div style={{ width: 1, height: 48, background: 'var(--ax-red)' }} />
             <h2 className="ax-font-display" style={{ fontSize: 'clamp(32px, 4vw, 56px)', fontWeight: 900, letterSpacing: '-0.03em', lineHeight: 0.9, margin: 0, color: 'var(--ax-white)' }}>
               ACROSS ALL<br />CUSTOMERS.
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, background: '#111' }}>
+          <div className="layout-four" style={{ display: 'grid',  gap: 1, background: '#111' }}>
             {[
               { v: '4,200+', label: 'Teams on AXIOM', color: 'var(--ax-white)' },
               { v: '$11M+', label: 'Customer savings to date', color: 'var(--ax-red)' },
@@ -330,7 +330,7 @@ export default function CaseStudiesPageContent() {
               { v: '4.2×', label: 'Average ROI in 6 months', color: 'var(--ax-white)' },
             ].map((m) => (
               <div key={m.label} style={{ background: '#080808', padding: '48px 36px' }}>
-                <div className="ax-font-display" style={{ fontSize: 'clamp(40px, 4vw, 64px)', fontWeight: 900, color: m.color, letterSpacing: '-0.04em', lineHeight: 1 }}>
+                <div className="ax-font-display" style={{ fontSize: 'clamp(32px, 4vw, 64px)', fontWeight: 900, color: m.color, letterSpacing: '-0.04em', lineHeight: 1 }}>
                   {m.v}
                 </div>
                 <div className="ax-micro-label" style={{ color: '#555', marginTop: 12 }}>{m.label}</div>
@@ -344,10 +344,10 @@ export default function CaseStudiesPageContent() {
       <section style={{ padding: '160px 0', background: '#050505', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(220,38,38,0.04) 0%, transparent 70%)' }} />
         <div className="ax-container" style={{ position: 'relative' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 80, alignItems: 'center' }}>
+          <div className="layout-cta" style={{ display: 'grid', gap: 80, alignItems: 'center' }}>
             <div>
               <div className="ax-micro-label" style={{ color: 'var(--ax-red)', letterSpacing: '0.2em', marginBottom: 24 }}>YOUR TURN</div>
-              <h2 className="ax-font-display" style={{ fontSize: 'clamp(48px, 7vw, 100px)', fontWeight: 900, lineHeight: 0.88, letterSpacing: '-0.04em', color: 'var(--ax-white)', margin: 0 }}>
+              <h2 className="ax-font-display" style={{ fontSize: 'clamp(32px, 7vw, 100px)', fontWeight: 900, lineHeight: 0.88, letterSpacing: '-0.04em', color: 'var(--ax-white)', margin: 0 }}>
                 WRITE YOUR<br />
                 <span style={{ WebkitTextStroke: '2px rgba(255,255,255,0.2)', color: 'transparent' }}>OWN STORY.</span>
               </h2>

@@ -1,0 +1,19 @@
+# AXIOM Command Center
+
+> Explore AXIOM, a bold SaaS website demo with illustrated product modules, sample case studies, and interactive monthly and annual pricing.
+
+## About this demonstration
+
+This is a fictional marketing demonstration. Forms and prices do not create accounts, messages, subscriptions, orders, or payments.
+
+## Pages
+
+- [AXIOM Command Center — SaaS Website Demo](https://vibed-saas-bold.xavainf.com/): Explore AXIOM, a bold SaaS website demo with illustrated product modules, sample case studies, and interactive monthly and annual pricing.
+- [Product — AXIOM SaaS Demo](https://vibed-saas-bold.xavainf.com/product): Explore the fictional AXIOM command-center product, interactive modules, workflow illustrations, and sample platform metrics.
+- [Features — AXIOM SaaS Demo](https://vibed-saas-bold.xavainf.com/features): Browse illustrated automation, intelligence, analytics, and collaboration features in the AXIOM SaaS website demo.
+- [Pricing — AXIOM SaaS Demo](https://vibed-saas-bold.xavainf.com/pricing): Compare sample AXIOM plans and switch between monthly and annual prices. This demonstration does not process payments or provision accounts.
+- [Case Studies — AXIOM SaaS Demo](https://vibed-saas-bold.xavainf.com/case-studies): Explore fictional AXIOM customer stories and sample outcomes, presented as an editorial SaaS marketing demonstration.
+
+## Creator
+
+Made with [XavaInf](https://xavainf.com).

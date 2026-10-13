@@ -49,7 +49,7 @@ export default function Features() {
   return (
     <section id="features" style={{ background: 'var(--ax-black)', position: 'relative', overflow: 'hidden' }}>
       {/* Section header */}
-      <div style={{ borderBottom: '1px solid var(--ax-border)', padding: '20px 60px', display: 'flex', alignItems: 'center', gap: 20 }}>
+      <div className="panel-padding-20-60 layout-wrap" style={{ borderBottom: '1px solid var(--ax-border)',  display: 'flex', alignItems: 'center', gap: 20 }}>
         <span className="ax-micro-label" style={{ color: 'var(--ax-red)' }}>§ 04</span>
         <div style={{ width: 1, height: 16, background: 'var(--ax-border2)' }} />
         <span className="ax-micro-label">FEATURE DEPTH</span>
@@ -79,17 +79,17 @@ function FeaturePanel({ feat, index }: { feat: typeof FEATURES[0]; index: number
   return (
     <div
       ref={ref}
-      style={{
+      className="layout-two" style={{
         display: 'grid',
-        gridTemplateColumns: isEven ? '50% 50%' : '50% 50%',
+
         minHeight: 520,
         borderBottom: '1px solid var(--ax-border)',
       }}
     >
       {/* Text block */}
       <div
-        style={{
-          padding: '72px 60px',
+        className="panel-padding-72-60" style={{
+
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -114,7 +114,7 @@ function FeaturePanel({ feat, index }: { feat: typeof FEATURES[0]; index: number
           </div>
 
           <h2 className="ax-font-display" style={{
-            fontSize: 'clamp(40px, 5.5vw, 80px)',
+            fontSize: 'clamp(32px, 5.5vw, 80px)',
             fontWeight: 800,
             lineHeight: 0.9,
             letterSpacing: '-0.04em',
@@ -148,7 +148,7 @@ function FeaturePanel({ feat, index }: { feat: typeof FEATURES[0]; index: number
               </span>
             ))}
           </div>
-          <a href="#pricing" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 12, fontWeight: 700, color: c, fontFamily: 'var(--font-display)', letterSpacing: '0.08em', textTransform: 'uppercase', textDecoration: 'none' }}>
+          <a href="/pricing" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 12, fontWeight: 700, color: c, fontFamily: 'var(--font-display)', letterSpacing: '0.08em', textTransform: 'uppercase', textDecoration: 'none' }}>
             Explore Feature <span>→</span>
           </a>
         </div>

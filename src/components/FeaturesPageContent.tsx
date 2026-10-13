@@ -233,7 +233,7 @@ export default function FeaturesPageContent() {
         </div>
 
         <div className="ax-container" style={{ position: 'relative', zIndex: 2, paddingTop: 120 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, alignItems: 'center', minHeight: '70vh' }}>
+          <div className="layout-two" style={{ display: 'grid',  gap: 0, alignItems: 'center', minHeight: '70vh' }}>
             {/* Left */}
             <div style={{ paddingRight: 60 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 48 }}>
@@ -241,7 +241,7 @@ export default function FeaturesPageContent() {
                 <span className="ax-micro-label" style={{ color: 'var(--ax-aqua)', letterSpacing: '0.2em' }}>8 CORE CAPABILITIES</span>
               </div>
               <h1 className="ax-font-display" style={{
-                fontSize: 'clamp(56px, 8vw, 120px)',
+                fontSize: 'clamp(32px, 8vw, 120px)',
                 fontWeight: 900,
                 lineHeight: 0.88,
                 letterSpacing: '-0.04em',
@@ -271,13 +271,13 @@ export default function FeaturesPageContent() {
             </div>
 
             {/* Right: Feature count grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: '#111' }}>
+            <div className="layout-two" style={{ display: 'grid',  gap: 1, background: '#111' }}>
               {FEATURES.map((f) => (
                 <div
                   key={f.id}
-                  style={{
+                  className="panel-padding-32-28" style={{
                     background: '#080808',
-                    padding: '32px 28px',
+
                     cursor: 'pointer',
                     borderLeft: `2px solid transparent`,
                     transition: 'all 0.2s ease',
@@ -329,23 +329,23 @@ export default function FeaturesPageContent() {
           }} />
 
           <div className="ax-container" style={{ position: 'relative' }}>
-            <div style={{
+            <div className="layout-two" style={{
               display: 'grid',
-              gridTemplateColumns: i % 2 === 0 ? '1fr 1fr' : '1fr 1fr',
+
               gap: 80,
               alignItems: 'center',
               direction: i % 2 === 0 ? 'ltr' : 'rtl',
             }}>
               {/* Text */}
               <div style={{ direction: 'ltr' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 32 }}>
+                <div className="layout-wrap" style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 32 }}>
                   <span className="ax-micro-label" style={{ color: feature.accentColor }}>{feature.id}</span>
                   <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.06)' }} />
                   <span className="ax-micro-label" style={{ color: '#444' }}>{feature.category}</span>
                 </div>
 
                 <h2 className="ax-font-display" style={{
-                  fontSize: 'clamp(48px, 6vw, 88px)',
+                  fontSize: 'clamp(32px, 6vw, 88px)',
                   fontWeight: 900,
                   lineHeight: 0.88,
                   letterSpacing: '-0.04em',
@@ -422,10 +422,10 @@ export default function FeaturesPageContent() {
       {/* Bottom CTA */}
       <section style={{ padding: '160px 0', background: '#050505' }}>
         <div className="ax-container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+          <div className="layout-two" style={{ display: 'grid',  gap: 80, alignItems: 'center' }}>
             <div>
               <div className="ax-micro-label" style={{ color: 'var(--ax-aqua)', letterSpacing: '0.2em', marginBottom: 24 }}>EVERYTHING INCLUDED</div>
-              <h2 className="ax-font-display" style={{ fontSize: 'clamp(48px, 6vw, 88px)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.03em', color: 'var(--ax-white)', marginBottom: 0 }}>
+              <h2 className="ax-font-display" style={{ fontSize: 'clamp(32px, 6vw, 88px)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.03em', color: 'var(--ax-white)', marginBottom: 0 }}>
                 ALL OF IT.<br />
                 <span style={{ color: 'var(--ax-red)' }}>DAY ONE.</span>
               </h2>
@@ -434,7 +434,7 @@ export default function FeaturesPageContent() {
               <p style={{ fontSize: 17, lineHeight: 1.75, color: 'rgba(255,255,255,0.45)', marginBottom: 40 }}>
                 Every plan gets access to every feature. No locked tiers. No "upgrade to unlock". Just full platform access from day one.
               </p>
-              <div style={{ display: 'flex', gap: 16 }}>
+              <div className="layout-wrap" style={{ display: 'flex', gap: 16 }}>
                 <Link href="/pricing" className="ax-btn-primary" style={{ textDecoration: 'none', padding: '16px 40px', fontSize: 13 }}>View Pricing →</Link>
                 <Link href="/case-studies" className="ax-btn-ghost" style={{ textDecoration: 'none', padding: '16px 40px', fontSize: 13 }}>Read Case Studies</Link>
               </div>
@@ -474,7 +474,7 @@ function FeatureVisual({ feature }: { feature: typeof FEATURES[0] }) {
             <div key={i} style={{ flex: 1, height: `${h}%`, background: i > 7 ? `rgba(6,182,212,0.4)` : 'rgba(6,182,212,0.8)', borderTop: i > 7 ? `1px dashed var(--ax-aqua)` : 'none', transition: 'height 0.3s ease' }} />
           ))}
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div className="layout-wrap" style={{ display: 'flex', justifyContent: 'space-between' }}>
           <span style={{ fontSize: 10, color: '#444', fontFamily: 'monospace' }}>ACTUAL</span>
           <span style={{ fontSize: 10, color: 'var(--ax-aqua)', fontFamily: 'monospace' }}>PROJECTED ↑18%</span>
         </div>
@@ -490,7 +490,7 @@ function FeatureVisual({ feature }: { feature: typeof FEATURES[0] }) {
           <div key={a.msg} style={{ display: 'flex', gap: 12, padding: '12px 0', borderBottom: '1px solid #111' }}>
             <div style={{ width: 3, background: a.color, flexShrink: 0, borderRadius: 2 }} />
             <div style={{ flex: 1 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
+              <div className="layout-wrap" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                 <span style={{ fontSize: 9, color: a.color, letterSpacing: '0.1em', fontFamily: 'monospace' }}>{a.level}</span>
                 <span style={{ fontSize: 9, color: '#444', fontFamily: 'monospace' }}>{a.time}</span>
               </div>
@@ -503,7 +503,7 @@ function FeatureVisual({ feature }: { feature: typeof FEATURES[0] }) {
   };
 
   const fallback = (
-    <div style={{ padding: 40, display: 'flex', flexDirection: 'column', gap: 12 }}>
+    <div className="panel-padding-40" style={{  display: 'flex', flexDirection: 'column', gap: 12 }}>
       {feature.details.slice(0, 4).map((d) => (
         <div key={d} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px', background: '#111', border: '1px solid #1a1a1a' }}>
           <div style={{ width: 4, height: 4, background: feature.accentColor }} />

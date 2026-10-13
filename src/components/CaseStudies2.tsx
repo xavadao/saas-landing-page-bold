@@ -121,7 +121,7 @@ export default function CaseStudies() {
       <div style={{ position: 'absolute', inset: 0, backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E")`, pointerEvents: 'none', opacity: 0.6 }} />
 
       {/* Section marker */}
-      <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '20px 60px', display: 'flex', alignItems: 'center', gap: 20, position: 'relative', zIndex: 5 }}>
+      <div className="panel-padding-20-60 layout-wrap" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)',  display: 'flex', alignItems: 'center', gap: 20, position: 'relative', zIndex: 5 }}>
         <span className="ax-micro-label" style={{ color: 'var(--ax-aqua)' }}>§ 05</span>
         <div style={{ width: 1, height: 16, background: 'var(--ax-border2)' }} />
         <span className="ax-micro-label">CUSTOMER PROOF</span>
@@ -130,15 +130,15 @@ export default function CaseStudies() {
       </div>
 
       {/* EDITORIAL HERO ROW — full-width, no equal columns */}
-      <div style={{ position: 'relative', zIndex: 5, display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 360, borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <div className="layout-two" style={{ position: 'relative', zIndex: 5, display: 'grid',  minHeight: 360, borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         {/* Left — massive headline */}
-        <div style={{
-          padding: '72px 60px',
+        <div className="panel-padding-72-60" style={{
+
           display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
           borderRight: '1px solid rgba(255,255,255,0.06)',
         }}>
           <h2 className="ax-font-display" style={{
-            fontSize: 'clamp(56px, 7vw, 112px)',
+            fontSize: 'clamp(32px, 7vw, 112px)',
             fontWeight: 800,
             lineHeight: 0.88,
             letterSpacing: '-0.04em',
@@ -153,7 +153,7 @@ export default function CaseStudies() {
             <span style={{ WebkitTextStroke: '2px var(--ax-white)', color: 'transparent' }}>SPEAK.</span>
           </h2>
           {/* Floating metrics — embedded in scene */}
-          <div style={{ display: 'flex', gap: 40, marginTop: 40 }}>
+          <div className="layout-wrap" style={{ display: 'flex', gap: 40, marginTop: 40 }}>
             {[
               { val: '4,200+', label: 'Teams', color: 'var(--ax-red)' },
               { val: '$2.4B', label: 'Processed', color: 'var(--ax-aqua)' },
@@ -168,7 +168,7 @@ export default function CaseStudies() {
         </div>
 
         {/* Right — featured quote + data overlay */}
-        <div style={{ padding: '72px 60px', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <div className="panel-padding-72-60" style={{  position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           {/* Data overlay lines */}
           <div style={{ position: 'absolute', top: 24, right: 24, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4 }}>
             <span className="ax-micro-label">MERIDIAN LABS</span>
@@ -182,7 +182,7 @@ export default function CaseStudies() {
             </p>
           </blockquote>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <div style={{ width: 36, height: 36, background: 'linear-gradient(135deg, rgba(232,25,44,0.4), rgba(232,25,44,0.1))', border: '1px solid rgba(232,25,44,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 800, color: 'var(--ax-red)', fontFamily: 'var(--font-display)' }}>P</div>
+            <div className="layout-wrap" style={{ width: 36, height: 36, background: 'linear-gradient(135deg, rgba(232,25,44,0.4), rgba(232,25,44,0.1))', border: '1px solid rgba(232,25,44,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 800, color: 'var(--ax-red)', fontFamily: 'var(--font-display)' }}>P</div>
             <div>
               <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ax-white)', fontFamily: 'var(--font-display)' }}>Priya Nambiar</div>
               <div style={{ fontSize: 10, color: 'var(--ax-muted)' }}>VP Engineering · Meridian Labs</div>
@@ -192,16 +192,16 @@ export default function CaseStudies() {
       </div>
 
       {/* CASE STUDY GRID — editorial, no equal boxes */}
-      <div style={{ position: 'relative', zIndex: 5, display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <div className="layout-three" style={{ position: 'relative', zIndex: 5, display: 'grid',  borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         {CASES.map((c, i) => (
           <CaseCard key={i} c={c} index={i} visible={visible} />
         ))}
       </div>
 
       {/* Bottom CTA row */}
-      <div style={{ padding: '28px 60px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative', zIndex: 5 }}>
+      <div className="panel-padding-28-60 layout-wrap" style={{  display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative', zIndex: 5 }}>
         <span style={{ fontSize: 13, color: 'var(--ax-white2)', fontWeight: 500 }}>Join 4,200+ teams already running on AXIOM.</span>
-        <a href="#pricing" className="ax-btn-ghost" style={{ display: 'inline-flex' }}>Read All Case Studies →</a>
+        <a href="/case-studies" className="ax-btn-ghost" style={{ display: 'inline-flex' }}>Read All Case Studies →</a>
       </div>
     </section>
   );
@@ -213,10 +213,10 @@ function CaseCard({ c, index, visible }: { c: typeof CASES[0]; index: number; vi
 
   return (
     <div
-      style={{
+      className="panel-padding-48-40" style={{
         background: hovered ? 'rgba(255,255,255,0.015)' : 'transparent',
         borderRight: index < 2 ? '1px solid rgba(255,255,255,0.06)' : 'none',
-        padding: '48px 40px',
+
         display: 'flex',
         flexDirection: 'column',
         gap: 24,
@@ -234,7 +234,7 @@ function CaseCard({ c, index, visible }: { c: typeof CASES[0]; index: number; vi
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: hovered ? `linear-gradient(90deg, ${accentHex}, transparent)` : 'transparent', transition: 'background 0.4s' }} />
 
       {/* Header */}
-      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
+      <div className="layout-wrap" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
         <span className="ax-tag" style={{ color: c.accent, borderColor: `${accentHex}40`, background: `${accentHex}10`, fontSize: 9 }}>{c.tag}</span>
         <span className="ax-micro-label" style={{ color: 'var(--ax-border2)' }}>0{index + 1}</span>
       </div>
@@ -249,7 +249,7 @@ function CaseCard({ c, index, visible }: { c: typeof CASES[0]; index: number; vi
 
       {/* Author */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, paddingTop: 16, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{
+        <div className="layout-wrap" style={{
           width: 36, height: 36, flexShrink: 0,
           background: `linear-gradient(135deg, ${accentHex}35, ${accentHex}08)`,
           border: `1px solid ${accentHex}25`,
@@ -265,7 +265,7 @@ function CaseCard({ c, index, visible }: { c: typeof CASES[0]; index: number; vi
       </div>
 
       {/* Stats — floating, no box */}
-      <div style={{ display: 'flex', gap: 24 }}>
+      <div className="layout-wrap" style={{ display: 'flex', gap: 24 }}>
         {c.stats.map((s, si) => (
           <div key={si}>
             <div style={{ fontSize: 20, fontWeight: 800, color: c.accent, fontFamily: 'var(--font-display)', lineHeight: 1, letterSpacing: '-0.02em', textShadow: `0 0 20px ${accentHex}40` }}>{s.val}</div>
