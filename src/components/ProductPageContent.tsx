@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
 export default function ProductPageContent() {
@@ -344,8 +344,6 @@ export default function ProductPageContent() {
                     width: '100%',
                     padding: '24px 28px',
                     background: activeModule === i ? '#111' : 'transparent',
-                    borderBottom: '1px solid #1a1a1a',
-                    borderLeft: activeModule === i ? `3px solid ${mod.color}` : '3px solid transparent',
                     border: 'none',
                     borderBottom: '1px solid #1a1a1a',
                     borderLeft: activeModule === i ? `3px solid ${mod.color}` : '3px solid transparent',

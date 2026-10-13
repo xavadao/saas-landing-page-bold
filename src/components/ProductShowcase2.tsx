@@ -264,12 +264,6 @@ function PanelVisual({ panel, active }: { panel: typeof PANELS[0]; active: boole
         {isIntelligence && (
           <g>
             {/* Particle network / intelligence graph */}
-            {[
-              [280, 120], [160, 200], [400, 200], [100, 320], [220, 340], [340, 340], [460, 320], [280, 380]
-            ].map(([nx, ny], ni) => {
-              const edges = [[0,1],[0,2],[1,3],[1,4],[2,5],[2,6],[4,7],[5,7]];
-              return null; // rendered below
-            })}
             {/* Edges */}
             {[[0,1],[0,2],[1,3],[1,4],[2,5],[2,6],[4,7],[5,7]].map(([a, b], i) => {
               const pts: [number,number][] = [[280,120],[160,200],[400,200],[100,320],[220,340],[340,340],[460,320],[280,380]];

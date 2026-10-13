@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, type ReactElement } from 'react';
 import Link from 'next/link';
 
 const FEATURES = [
@@ -79,7 +79,6 @@ const FEATURES = [
 ];
 
 export default function FeaturesPageContent() {
-  const [activeFeature, setActiveFeature] = useState<number | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -273,7 +272,7 @@ export default function FeaturesPageContent() {
 
             {/* Right: Feature count grid */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: '#111' }}>
-              {FEATURES.map((f, i) => (
+              {FEATURES.map((f) => (
                 <div
                   key={f.id}
                   style={{
@@ -448,7 +447,7 @@ export default function FeaturesPageContent() {
 }
 
 function FeatureVisual({ feature }: { feature: typeof FEATURES[0] }) {
-  const visuals: Record<string, JSX.Element> = {
+  const visuals: Record<string, ReactElement> = {
     'AUTOMATION': (
       <div style={{ padding: 32 }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>

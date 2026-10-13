@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
 const CASE_STUDIES = [
@@ -85,19 +84,6 @@ const CASE_STUDIES = [
 const LOGOS = ['MERIDIAN', 'HELIX', 'VOLTA', 'STRATUS', 'FORGE', 'ATLAS', 'NUCLEUS', 'VANTAGE'];
 
 export default function CaseStudiesPageContent() {
-  const [activeStudy, setActiveStudy] = useState(0);
-  const [countersStarted, setCountersStarted] = useState(false);
-  const metricsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = metricsRef.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { setCountersStarted(true); obs.disconnect(); }
-    }, { threshold: 0.2 });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
 
   return (
     <>
@@ -328,7 +314,7 @@ export default function CaseStudiesPageContent() {
       ))}
 
       {/* Aggregate metrics */}
-      <section ref={metricsRef} style={{ padding: '120px 0', background: '#060606', borderTop: '1px solid #111', borderBottom: '1px solid #111' }}>
+      <section style={{ padding: '120px 0', background: '#060606', borderTop: '1px solid #111', borderBottom: '1px solid #111' }}>
         <div className="ax-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 80 }}>
             <div style={{ width: 1, height: 48, background: 'var(--ax-red)' }} />

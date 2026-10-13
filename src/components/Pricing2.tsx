@@ -111,14 +111,14 @@ export default function Pricing() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 16px', border: '1px solid var(--ax-border2)' }}>
             <button
               onClick={() => setAnnual(false)}
-              style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', fontFamily: 'var(--font-display)', background: 'none', border: 'none', cursor: 'pointer', color: !annual ? 'var(--ax-white)' : 'var(--ax-muted)', textTransform: 'uppercase', padding: '4px 12px', background: !annual ? 'var(--ax-surface)' : 'transparent' } as React.CSSProperties}
+              style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', fontFamily: 'var(--font-display)', border: 'none', cursor: 'pointer', color: !annual ? 'var(--ax-white)' : 'var(--ax-muted)', textTransform: 'uppercase', padding: '4px 12px', background: !annual ? 'var(--ax-surface)' : 'transparent' } as React.CSSProperties}
             >
               Monthly
             </button>
             <div style={{ width: 1, height: 14, background: 'var(--ax-border2)' }} />
             <button
               onClick={() => setAnnual(true)}
-              style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', fontFamily: 'var(--font-display)', background: 'none', border: 'none', cursor: 'pointer', color: annual ? 'var(--ax-white)' : 'var(--ax-muted)', textTransform: 'uppercase', padding: '4px 12px', background: annual ? 'var(--ax-surface)' : 'transparent' } as React.CSSProperties}
+              style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', fontFamily: 'var(--font-display)', border: 'none', cursor: 'pointer', color: annual ? 'var(--ax-white)' : 'var(--ax-muted)', textTransform: 'uppercase', padding: '4px 12px', background: annual ? 'var(--ax-surface)' : 'transparent' } as React.CSSProperties}
             >
               Annual
             </button>
